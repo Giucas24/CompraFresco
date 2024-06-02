@@ -10,7 +10,7 @@ const app = express()
 
 app.use(cors(
   {
-    origin: ["compra-fresco-api.vercel.app"],
+    origin: ["https://compra-fresco-frontend.vercel.app/"],
     methods: ["POST", "GET"],
     credentials: true
   }
