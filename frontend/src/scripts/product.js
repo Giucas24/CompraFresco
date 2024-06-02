@@ -1,7 +1,7 @@
 const mainContent = document.querySelector('#main-content'); 
 const prodListContainer = document.querySelector('#product-list-container')
 
-class Product {
+module.exports = class Product {
     constructor(mainContent, prodListContainer, product) {
         this.mainContent = mainContent;
         this.prodListContainer = prodListContainer;
@@ -128,6 +128,3 @@ class Product {
                 })
     }
 }
-
-
-module.exports = Product
