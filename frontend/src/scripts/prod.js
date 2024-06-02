@@ -1,11 +1,11 @@
-const Products = require('Product')
+const Product = require('./product')
 /* const prodBox = document.querySelector('#prod-box');
 const descBox = document.querySelector('.desc-box');
 const buyContainer = document.querySelector('.buy-container'); */
 const mainContent = document.querySelector('#main-content'); 
 
 
-class Product {
+/* class Product {
     constructor(mainContent, product) {
         //this.prodBox = prodBox;
         //this.descBox = descBox;
@@ -118,7 +118,7 @@ class Product {
         })
     }
 
-}
+} */
 
 
 /* fetch('./product.json')
@@ -143,7 +143,7 @@ fetch('../api/products/' + window.location.href.split("#")[1])
     console.log(prod);
     //containerElement.innerHTML = '';
     
-        new Product(mainContent, prod)
+        new Product(mainContent, prod).getSingleProduct();
     
     
 })
