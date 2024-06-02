@@ -8,6 +8,17 @@ const router = require('./routes/api')
 
 const app = express()
 
+app.use(cors(
+  {
+    origin: [""],
+    methods: ["POST", "GET"],
+    credentials: true
+  }
+))
+app.use(express.static(path.join(__dirname, '..', 'frontend', 'src')));
+//app.use(express.static(path.join(__dirname, 'static')));
+app.use(express.json())
+
 mongoose.connect("mongodb+srv://paciandrea24:paciandrea24@cluster0.kxvlvhz.mongodb.net/Laurea?retryWrites=true&w=majority&appName=Cluster0")
 
 
@@ -19,14 +30,13 @@ db.once("open", () => {
   })
 })
 
-app.use(cors())
-app.use(express.static(path.join(__dirname, '..', 'frontend', 'src')));
-//app.use(express.static(path.join(__dirname, 'static')));
-app.use(express.json())
+
 
 app.use('/api', router)
 
-
+app.get("/", (req,res) => {
+  res.json("Hello")
+})
 
 
 
