@@ -61,4 +61,3 @@ fetch('./api/products/all')
     
 })
 
-export default Product
