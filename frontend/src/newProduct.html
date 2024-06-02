@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CompraFresco</title>
+    <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="./styles/newProduct.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body>
+    <header id="header">
+        <div class="logo-container">
+            <figure id="logo-figure">
+                <a href="index.html"><img src="../public/img/comprafresco-high-resolution-logo-white-transparent.png" id="logo-img"></a>
+                
+            </figure>
+        </div>
+
+        <div class="search-bar-container">
+            <form id="form">
+                <input type="search" name="prodName" id="query" placeholder="Cerca i prodotti..." autocomplete="off" class="search-bar">
+                <button class="search-button"><i class="fa-solid fa-magnifying-glass" onclick=""></i></button>
+            </form>
+            
+        </div>
+
+        <div class="add-container">
+            <button class="add-product-button">Aggiungi prodotto</button>
+        </div>
+
+    </header>
+
+    <div class="main-content">
+        <div class="upload-img-container">
+            <input type="file" id="file" accept="image/*" hidden>
+            <div class="img-area" data-img="">
+                <i class="bx bxs-cloud-upload icon"></i>
+                <h3>Upload Image</h3>
+                <p>Image size must be less than <span>2MB</span></p>
+            </div>
+            <button class="select-image">Select Image</button>
+        </div>
+
+        <div class="data-input">
+            <form id="product-post" action="">
+                <label for="prodName">Nome prodotto</label><br>
+                <input type="text" id="prodName" name="prodName" autocomplete="off" required><br>
+                <label for="description">Descrizione</label><br>
+                <textarea name="description" id="description" rows="15" cols="100" autocomplete="off" required></textarea><br>
+                <label for="rating">Valutazione</label><br>
+                <input list="ratings" autocomplete="off" required><br>
+                <datalist id="ratings" autocomplete="off">
+                    <option value=1></option>
+                    <option value=2></option>
+                    <option value=3></option>
+                    <option value=4></option>
+                    <option value=5></option>
+                </datalist>
+                <label for="price">Prezzo</label><br>
+                <input type="number" autocomplete="off" required><br>
+                <button class="select-image">
+                    Invia
+                </button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="./scripts/newProduct.js" defer></script>
+</body>
+</html>

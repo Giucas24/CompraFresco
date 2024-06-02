@@ -1,0 +1,117 @@
+* {
+    margin: 0px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.main-container {
+    margin-top: 20px;
+    margin-left: 20px;
+    border-radius: 30px;
+    width: 700px;
+    height: 570px;
+    background-color: rgb(226 232 240);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container > h1 {
+    margin-top: 5px;
+    margin-left: 15px;
+}
+
+
+#product-list-container {
+    width: 600px;
+    height: fit-content;
+    background-image: url('https://img.freepik.com/free-photo/grapes-strawberries-pineapple-kiwi-apricot-banana-whole-pineapple_23-2147968680.jpg?w=900&t=st=1716847573~exp=1716848173~hmac=8cb144ad39069d44f655d474e25b593ae8ba7b4f48ff2d53ab0c539a36c4d664');
+    object-fit: cover;
+    background-position: center;
+    border-radius: 30px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+.product-container {
+    width: 200px;
+    height: 200px;
+    background-color: rgb(241 245 249);
+    margin-left: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(12px) saturate(161%);
+    -webkit-backdrop-filter: blur(12px) saturate(161%);
+    background-color: rgba(255, 255, 255, 0.39);
+    border-radius: 30px;
+    border: 1px solid rgba(209, 213, 219, 0.3);
+    
+}
+
+.product-container:hover {
+    outline: none;
+    border-color: rgb(248 250 252);
+    box-shadow: 0 0 10px rgb(248 250 252);
+}
+
+
+.prod-figure {
+    height: 150px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.link-to-prod {
+    height: 150px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.prod-img {
+    height: 150px;
+    width: 150px;
+    object-fit: contain;
+}
+
+.prod-figure > img {
+    height: 150px;
+    width: 150px;
+    object-fit: contain;
+    border: 1px solid #cbd5e1;
+    border-radius: 30px;
+}
+
+.prod-figure > img:hover {
+    
+    cursor: pointer;
+}
+
+
+.prod-list {
+    list-style: none;
+    padding: 0px;
+    display: flex;
+}
+
+
+
+
+
+
