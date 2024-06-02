@@ -1,3 +1,4 @@
+const Products = require('Product')
 /* const prodBox = document.querySelector('#prod-box');
 const descBox = document.querySelector('.desc-box');
 const buyContainer = document.querySelector('.buy-container'); */

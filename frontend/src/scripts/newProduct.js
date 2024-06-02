@@ -35,14 +35,14 @@ document.getElementById("product-post").addEventListener("submit", async functio
 
 	try {
 		// URL dell'endpoint a cui inviare la richiesta
-		const url = "https://compra-fresco.vercel.app/newProduct";
+		const url = "https://comprafresco.onrender.com/newProduct";
 
 		// Invia la richiesta POST
     	const response = await fetch(url, {
      	 method: "POST",
      	 headers: {
         	"Content-Type": "application/json",
-			"Access-Control-Allow-Origin": "https://compra-fresco-ofsyac6we-giucas24s-projects.vercel.app/newProduct.html"
+			"Access-Control-Allow-Origin": "https://comprafresco.onrender.com/newProduct.html"
       	},
       	body: JSON.stringify(data)
     });

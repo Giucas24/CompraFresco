@@ -1,10 +1,11 @@
+const Product = require('./product')
 const prodListContainer = document.querySelector('#product-list-container')
 
-class Product {
+ /*class Product {
     constructor(prodListContainer, product) {
         /*this.prodBox = prodBox;
         this.descBox = descBox;
-        this.buyContainer = buyContainer; */
+        this.buyContainer = buyContainer; 
         this.prodListContainer = prodListContainer;
         this.product = product;
 
@@ -39,10 +40,10 @@ class Product {
             prodFigure.style.backgroundColor = '';
         })
 
-    }
+    } 
 
 
-}
+}*/
 
 
 
@@ -55,7 +56,9 @@ fetch('./api/products/all')
 .then(prod => {
     //containerElement.innerHTML = '';
     prod.forEach(e => {
-        new Product(prodListContainer, e)
+        new Product(prodListContainer, e).getAvailableProducts();
     })
     
 })
+
+export default Product
