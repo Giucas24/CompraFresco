@@ -1,4 +1,4 @@
-const Product = require('./product.js')
+import Product from './product'
 const prodListContainer = document.querySelector('#product-list-container')
 
  /*class Product {

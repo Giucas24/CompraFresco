@@ -1,7 +1,7 @@
 const mainContent = document.querySelector('#main-content'); 
 const prodListContainer = document.querySelector('#product-list-container')
 
-module.exports = class Product {
+export default class Product {
     constructor(mainContent, prodListContainer, product) {
         this.mainContent = mainContent;
         this.prodListContainer = prodListContainer;
