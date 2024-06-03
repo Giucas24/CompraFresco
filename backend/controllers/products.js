@@ -2,6 +2,7 @@ const Product = require('../models/products')
 const path = require('path')
 
 
+
 module.exports = {
     getAllProducts: (req,res) => {
         Product.find({})
@@ -23,7 +24,7 @@ module.exports = {
             description: req.body.description,
             rating: req.body.rating,
             price: req.body.price,
-            imgSrc: req.body.path
+            imgSrc: req.body.imgSrc
         });
 
         const val = await data.save();

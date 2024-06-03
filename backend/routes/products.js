@@ -5,11 +5,14 @@ const bodyParser = require("body-parser");
 const Product = require('../models/products')
 
 
+
+
 const router = express.Router()
 
 router.use(express.static(path.join(__dirname, '..', 'frontend', 'src')));
 
 router.use(bodyParser.json());
+
 
 
 
