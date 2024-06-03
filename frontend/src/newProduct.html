@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" translate="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,41 +34,46 @@
     </header>
 
     <div class="main-content">
-        <div class="upload-img-container">
-            <input type="file" id="file" accept="image/*" hidden>
-            <div class="img-area" data-img="">
-                <i class="bx bxs-cloud-upload icon"></i>
-                <h3>Upload Image</h3>
-                <p>Image size must be less than <span>2MB</span></p>
-            </div>
-            <button class="select-image">Select Image</button>
-        </div>
-
-        <div class="data-input">
+        <div class="data-container">
             <form id="product-post" action="">
-                <label for="prodName">Nome prodotto</label><br>
-                <input type="text" id="prodName" name="prodName" autocomplete="off" required><br>
-                <label for="description">Descrizione</label><br>
-                <textarea name="description" id="description" rows="15" cols="100" autocomplete="off" required></textarea><br>
-                <label for="rating">Valutazione</label><br>
-                <input list="ratings" autocomplete="off" required><br>
-                <datalist id="ratings" autocomplete="off">
-                    <option value=1></option>
-                    <option value=2></option>
-                    <option value=3></option>
-                    <option value=4></option>
-                    <option value=5></option>
-                </datalist>
-                <label for="price">Prezzo</label><br>
-                <input type="number" autocomplete="off" required><br>
-                <button class="select-image">
-                    Invia
-                </button>
+                <div class="upload-img-container">
+                    <input type="file" id="imgSrc" accept="image/*" hidden>
+                    <div class="img-area" data-img="">
+                        <i class="bx bxs-cloud-upload icon"></i>
+                        <h3>Upload Image</h3>
+                        <p>Image size must be less than <span>2MB</span></p>
+                    </div>
+                    <button type="button" class="select-image">Select Image</button>
+                </div>
+
+
+                <div class="data-input">
+                
+                    <label for="prodName">Nome prodotto</label><br>
+                    <input type="text" id="prodName" name="prodName" autocomplete="off" required><br>
+    
+                    <label for="description">Descrizione</label><br>
+                    <textarea name="description" id="description" rows="15" cols="100" autocomplete="off" required></textarea><br>
+    
+                    <label for="rating">Valutazione</label><br>
+                    <input type="number" id="rating" name="rating" autocomplete="off" max="5" required><br>
+                    
+                
+                    <label for="price">Prezzo</label><br>
+                    <input type="number" id="price" name="price" autocomplete="off" required><br>
+    
+                    <button type="submit" class="send-data-button">
+                        Invia
+                    </button>
             </form>
         </div>
     </div>
+        
+
+        
+    </div>
     
     <script src="./scripts/newProduct.js" type="module" defer></script>
-    <script src="./scripts/prodotti.js" type="module" defer></script>
+    <script src="./scripts/products.js" type="module" defer></script>
 </body>
 </html>

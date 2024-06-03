@@ -48,6 +48,7 @@ export default class Product {
                 return product;
     }
 
+
     getSingleProduct(mainContent, product) {
                 // CREO GLI ELEMENTI
                 const prodBox = document.createElement('div');
@@ -106,14 +107,13 @@ export default class Product {
                 quantityBox.appendChild(plusButton);
                 plusButton.appendChild(plusIcon)
         
-        
+
                 // TEXT CONTEXT
                 let nameNormal = product.prodName;
                 let nameUpperFirst = nameNormal[0].toUpperCase() + nameNormal.slice(1);
                 prodName.textContent = nameUpperFirst;
                 description.textContent = product.description;
-                this.printRating(rating);
-               // rating.textContent = product.rating;
+                this.printRating(rating, this.product.rating);             
                 price.textContent = product.price + ' €';
                 quantity.textContent = 1;
                 let currQuantity = 1;
@@ -136,7 +136,41 @@ export default class Product {
                 })
 
                 return product
-    }
+            }
+
+            printRating(element, ratingValue) {
+                for (let i = 0; i < ratingValue; i++) {
+                    const checkedStar = document.createElement('i');
+                    checkedStar.setAttribute('class', 'fa-solid fa-star');
+                    checkedStar.setAttribute('style', 'color: #FFD43B;');
+                    element.appendChild(checkedStar);
+                }
+        
+                let diff = 5 - ratingValue;
+                for (let i = 0; i < diff; i++) {
+                    const uncheckedStar = document.createElement('i');
+                    uncheckedStar.setAttribute('class', 'fa-solid fa-star');
+                    element.appendChild(uncheckedStar);
+                }
+            }
+
+
+            
+
+            /* printRating(rating) {
+                this.product.rating.forEach(value => {
+                    if(value == 1) {
+                        const checkedStar = document.createElement('i');
+                        checkedStar.setAttribute('class', 'fa-solid fa-star')
+                        checkedStar.setAttribute('style', 'color: #FFD43B;')
+                        rating.appendChild(checkedStar);
+                    } else {
+                        const uncheckedStar = document.createElement('i');
+                        uncheckedStar.setAttribute('class', 'fa-solid fa-star')
+                        rating.appendChild(uncheckedStar);
+                    }
+                })
+            } */
 }
 
 

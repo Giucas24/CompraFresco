@@ -18,9 +18,7 @@ router.get('/all', productsController.getAllProducts)
 
 router.get('/:prodName', productsController.getProductByprodName)
 
-router.post('/newProduct', (req, res) => {
-    
-})
+router.post('/newProduct', productsController.postNewProduct)
 
 /*router.get('/anguria', (req, res) => {
     Product.find({prodName: req.params.prodName})

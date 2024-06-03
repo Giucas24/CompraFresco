@@ -16,6 +16,20 @@ module.exports = {
         
     },
 
+    postNewProduct: async (req, res) => {
+        console.log(req.body);
+        const data = new Product({
+            prodName: req.body.prodName,
+            description: req.body.description,
+            rating: req.body.rating,
+            price: req.body.price,
+            imgSrc: req.body.path
+        });
+
+        const val = await data.save();
+        res.json(val);
+    }
+
 
 
     

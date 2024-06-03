@@ -15,6 +15,8 @@ body {
     background-color: rgba(255, 255, 255, 0.39);
     border-radius: 30px;
     border: 1px solid rgba(209, 213, 219, 0.3);
+	margin-left: 20px;
+	
 }
 
 .img-area {
@@ -81,6 +83,8 @@ body {
 .img-area.active:hover::before {
 	opacity: 1;
 }
+
+
 .select-image {
 	display: block;
 	width: 100%;
@@ -112,18 +116,17 @@ body {
 }
 
 .data-input {
-    background-color: red;
     border-radius: 30px;
     max-width: 400px;
 	width: 400px;
-    height: 550px;
-    display: flex;
+    height: 500px;
     justify-content: flex-start;
     backdrop-filter: blur(12px) saturate(161%);
     -webkit-backdrop-filter: blur(12px) saturate(161%);
     background-color: rgba(255, 255, 255, 0.39);
     border-radius: 30px;
     border: 1px solid rgba(209, 213, 219, 0.3);
+	margin-right: 20px;
 }
 
 .data-input * {
@@ -147,4 +150,45 @@ body {
 
 .data-input input {
 	width: 315px;
+}
+
+
+.send-data-button {
+	display: block;
+	width: 100%;
+	padding: 16px 0;
+	border-radius: 15px;
+	background: #30A149;
+	color: #fff;
+	font-weight: 500;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+	transition: all .3s ease;
+}
+
+
+.send-data-button:hover {
+	background: #15803d;
+}
+
+
+.data-container {
+	width: 900px;
+	height: fit-content;
+	backdrop-filter: blur(12px) saturate(161%);
+    -webkit-backdrop-filter: blur(12px) saturate(161%);
+    background-color: rgba(255, 255, 255, 0.39);
+    border-radius: 30px;
+    border: 1px solid rgba(209, 213, 219, 0.3);	
+	display: flex;
+	justify-content: center;
+}
+
+#product-post {
+	height: 550px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 120px;
 }

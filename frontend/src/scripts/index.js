@@ -1,4 +1,4 @@
-import Product from './prodotti.js'
+import Product from './products.js'
 const prodListContainer = document.querySelector('#product-list-container')
 
  /*class Product {

@@ -1,6 +1,10 @@
 const selectImage = document.querySelector('.select-image');
-const inputFile = document.querySelector('#file');
+const inputFile = document.querySelector('#imgSrc');
 const imgArea = document.querySelector('.img-area');
+const prodForm = document.querySelector('#product-post');
+const sendDataButton = document.querySelector('.send-data-button');
+const uploadImgContainer = document.querySelector('.upload-img-container');
+const dataInput = document.querySelector('.data-input');
 
 selectImage.addEventListener('click', function () {
 	inputFile.click();
@@ -16,9 +20,18 @@ inputFile.addEventListener('change', function () {
 			const imgUrl = reader.result;
 			const img = document.createElement('img');
 			img.src = imgUrl;
+			imgArea.innerHTML = '';
 			imgArea.appendChild(img);
+			uploadImgContainer.style.width= '282.79px';
+			uploadImgContainer.style.height= '325px';
+			dataInput.style.width= '359px';
+			//dataInput.style.height= '';
+			imgArea.style.width = '282.79px'; // Imposta la larghezza desiderata
+			imgArea.style.height = '240px'; // Imposta l'altezza desiderata
 			imgArea.classList.add('active');
 			imgArea.dataset.img = image.name;
+			
+
 		}
 		reader.readAsDataURL(image);
 	} else {
@@ -26,7 +39,36 @@ inputFile.addEventListener('change', function () {
 	}
 })
 
-document.getElementById("product-post").addEventListener("submit", async function(event) {
+prodForm.addEventListener('submit', (e) => {
+	e.preventDefault();
+	
+	const formData = new FormData(e.target);
+	const data = Object.fromEntries(formData.entries());
+
+	fetch('./api/products/newProduct', {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+			"Access-Control-Allow-Origin": "https://comprafresco.onrender.com/newProduct.html"
+		},
+		body: JSON.stringify(data)
+	})
+	.then(response => {
+		if (response.status === 200) { window.location.href = "./index.html" }
+		else console.log('errore');
+	})
+
+	if (response.ok) {
+		window.location.href = "./index.html";
+	}
+})
+
+
+
+
+
+
+/* document.getElementById("product-post").addEventListener("submit", async function(event) {
 	event.preventDefault();
 
 	// Raccogli i dati dal form
@@ -63,3 +105,4 @@ document.getElementById("product-post").addEventListener("submit", async functio
 		console.error("There was a problem with the fetch operation:", error); // Gestisce eventuali errori
 	  }
 	});
+*/

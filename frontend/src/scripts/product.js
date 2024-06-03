@@ -1,4 +1,4 @@
-import Product from './prodotti.js'
+import Product from './products.js'
 /* const prodBox = document.querySelector('#prod-box');
 const descBox = document.querySelector('.desc-box');
 const buyContainer = document.querySelector('.buy-container'); */
