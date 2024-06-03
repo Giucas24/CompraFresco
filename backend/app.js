@@ -10,11 +10,12 @@ const app = express()
 
 app.use(cors(
   {
-    origin: ["https://compra-fresco-frontend.vercel.app/"],
+    origin: ["https://comprafresco.onrender.com/"],
     methods: ["POST", "GET"],
     credentials: true
   }
 ))
+
 app.use(express.static(path.join(__dirname, '..', 'frontend', 'src')));
 //app.use(express.static(path.join(__dirname, 'static')));
 app.use(express.json())

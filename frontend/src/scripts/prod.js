@@ -1,4 +1,4 @@
-import Product from './product'
+import Product from './prodotti.js'
 /* const prodBox = document.querySelector('#prod-box');
 const descBox = document.querySelector('.desc-box');
 const buyContainer = document.querySelector('.buy-container'); */
@@ -142,8 +142,7 @@ fetch('../api/products/' + window.location.href.split("#")[1])
 .then(prod => {
     console.log(prod);
     //containerElement.innerHTML = '';
-    
-        new Product(mainContent, prod).getSingleProduct();
+        new Product(mainContent, prod).getSingleProduct(mainContent, prod)
     
     
 })

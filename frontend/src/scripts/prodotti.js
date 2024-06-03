@@ -2,32 +2,38 @@ const mainContent = document.querySelector('#main-content');
 const prodListContainer = document.querySelector('#product-list-container')
 
 export default class Product {
-    constructor(mainContent, prodListContainer, product) {
+    constructor(mainContent, product) {
         this.mainContent = mainContent;
-        this.prodListContainer = prodListContainer;
         this.product = product
     }
 
-    getAvailableProducts() {
+    getAvailableProducts(prodListContainer, product) {
                 // CREO GLI ELEMENTI DA APPENDERE A prodContainer
                 const prodContainer = document.createElement('div')
                 const prodFigure = document.createElement('figure')
                 const link = document.createElement('a')
                 const prodImg = document.createElement('img')
+                const prodName = document.createElement('p')
         
                 // IMPOSTO LA CLASSE
                 prodContainer.setAttribute('class', 'product-container')
                 prodFigure.setAttribute('class', 'prod-figure')
                 prodImg.setAttribute('class', 'prod-img')
-                prodImg.setAttribute('src', product.imgSrc)
+                prodImg.setAttribute('src', this.product.imgSrc)
                 link.setAttribute('class', 'link-to-prod')
-                link.setAttribute('href', './product.html#' + product.prodName) 
+                link.setAttribute('href', './product.html#' + this.product.prodName) 
+                prodName.setAttribute('class', 'prodName')
         
                 // APPENDCHILD
                 prodListContainer.appendChild(prodContainer)
                 prodContainer.appendChild(prodFigure)
                 prodFigure.appendChild(link)
                 link.appendChild(prodImg)
+                prodContainer.appendChild(prodName)
+
+                let nameNormal = this.product.prodName;
+                let nameUpperFirst = nameNormal[0].toUpperCase() + nameNormal.slice(1);
+                prodName.textContent = nameUpperFirst;
         
         
                 prodFigure.addEventListener("mouseover", () => {
@@ -38,9 +44,11 @@ export default class Product {
                 prodFigure.addEventListener("mouseout", () => {
                     prodFigure.style.backgroundColor = '';
                 })
+
+                return product;
     }
 
-    getSingleProduct() {
+    getSingleProduct(mainContent, product) {
                 // CREO GLI ELEMENTI
                 const prodBox = document.createElement('div');
                 const descBox = document.createElement('div');
@@ -66,7 +74,7 @@ export default class Product {
                 descBox.setAttribute('id', 'desc-box');     // box descrizione
                 buyContainer.setAttribute('id', 'buy-container');       // box aggiungi al carrello
                 figure.setAttribute('class', 'prod-figure');
-                img.setAttribute('src', product.imgSrc);
+                img.setAttribute('src', this.product.imgSrc);
                 img.setAttribute('class', 'prod-img')
                 descUl.setAttribute('class', 'desc-ul');
                 prodName.setAttribute('class', 'prod-name');
@@ -126,5 +134,10 @@ export default class Product {
                     currQuantity = currQuantity + 1;
                     quantity.textContent = currQuantity;
                 })
+
+                return product
     }
 }
+
+
+

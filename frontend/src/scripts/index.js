@@ -1,4 +1,4 @@
-import Product from './product'
+import Product from './prodotti.js'
 const prodListContainer = document.querySelector('#product-list-container')
 
  /*class Product {
@@ -56,7 +56,7 @@ fetch('./api/products/all')
 .then(prod => {
     //containerElement.innerHTML = '';
     prod.forEach(e => {
-        new Product(prodListContainer, e).getAvailableProducts();
+        new Product(prodListContainer, e).getAvailableProducts(prodListContainer, prod)
     })
     
 })
