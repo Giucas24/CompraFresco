@@ -1,20 +1,43 @@
 <!DOCTYPE html>
-<html lang="en" translate="no">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CompraFresco</title>
-    <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="./styles/landing.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./styles/footer.css">
+
 </head>
 <body>
     <header id="header">
         <div class="logo-container">
             <figure id="logo-figure">
-                <a href="index.html"><img src="../public/img/comprafresco-high-resolution-logo-white-transparent.png" id="logo-img"></a>
-                
+                <a href="index.html"><img src="../src/public/img/logo-index.png" id="logo-img"></a>
             </figure>
+        </div>
+
+        <div class="main-menu">
+            <nav id="nav-menu">
+                <ul id="info-menu">
+                    <li>Home</li>
+                    <li>About</li>
+                    <li class="shop-button">
+                        <p>Shop</p>
+                        <div class="content">
+                            <a href="./allproducts.html">Product</a>
+                            <a href="">Product Details</a>
+                            <a href="">Wishlist</a>
+                            <a href="">Cart</a>
+                            <a href="">Checkout</a>
+                        </div>
+                    </li>
+                    <li>Pages</li>
+                    <li>Blog</li>
+                    <li>Contact</li>
+                </ul>
+            </nav>
         </div>
 
         <div class="search-bar-container">
@@ -22,51 +45,282 @@
                 <input type="search" name="prodName" id="query" placeholder="Cerca i prodotti..." autocomplete="off" class="search-bar">
                 <button class="search-button"><i class="fa-solid fa-magnifying-glass" onclick=""></i></button>
             </form>
-            
         </div>
 
-        <div class="add-container">
+        <div class="right-header">
+            <ul id="right-icons">
+                <li><i class="fa-regular fa-heart"></i></li>
+                <li><i class="fa-solid fa-cart-shopping"></i></li>
+                <li><i class="fa-solid fa-bars"></i></li>
+            </ul>
+        </div>
+
+      <!--  <div class="add-container">
             <a href="./newProduct.html"><button class="add-product-button">Aggiungi prodotto</button></a>
             
-        </div>
+        </div> -->
 
     </header>
-
     <main>
-        <h1>Prodotti disponibili: </h1>
-        <div class="main-container">
-            
-            <div id="product-list-container">
-                <!--<div class="product-container">
-                    <figure class="prod-figure">
-                        <img src="./img/anguria.png" alt="">
-                    </figure>
-                </div>
-    
-                <div class="product-container">
-                    <figure class="prod-figure">
-                        <img src="./img/ciliegia.png" alt="">
-                    </figure>
-                </div>
-    
-                <div class="product-container">
-                    <figure class="prod-figure">
-                        <img src="./img/anguria.png" alt="">
-                    </figure>
-                </div>
-    
-                <div class="product-container">
-                    <figure class="prod-figure">
-                        <img src="./img/anguria.png" alt="">
-                    </figure>
-                </div> -->
+        <div class="container">
+            <div class="wrapper">
+                <img src="./public/img/brooke-lark-08bOYnH_r_E-unsplash (1).jpg" alt="">
+                <img src="./public/img/brooke-lark-08bOYnH_r_E-unsplash (1).jpg" alt="">
+                <img src="./public/img/brooke-lark-08bOYnH_r_E-unsplash (1).jpg" alt="">
+                <img src="./public/img/brooke-lark-08bOYnH_r_E-unsplash (1).jpg" alt="">
+   
             </div>
         </div>
+
+        <div class="lower-container">
+            <div class="lower-wrapper">
+                <div class="category-box">
+                    <div class="icon"><i class="fa-solid fa-apple-whole"></i></div>
+                    <h6 class="category-name">Frutta fresca</h6>
+                    <h6 class="category-number-prod">16 articoli</h6>
+                </div>
+   
+                <div class="category-box">
+                    <div class="icon"><i class="fa-solid fa-apple-whole"></i></div>
+                    <h6 class="category-name">Frutta fresca</h6>
+                    <h6 class="category-number-prod">16 articoli</h6>
+                </div>
+   
+                <div class="category-box">
+                    <div class="icon"><i class="fa-solid fa-apple-whole"></i></div>
+                    <h6 class="category-name">Frutta fresca</h6>
+                    <h6 class="category-number-prod">16 articoli</h6>
+                </div>
+   
+                <div class="category-box">
+                    <div class="icon"><i class="fa-solid fa-apple-whole"></i></div>
+                    <h6 class="category-name">Frutta fresca</h6>
+                    <h6 class="category-number-prod">16 articoli</h6>
+                </div>
+   
+                <div class="category-box">
+                    <div class="icon"><i class="fa-solid fa-apple-whole"></i></div>
+                    <h6 class="category-name">Frutta fresca</h6>
+                    <h6 class="category-number-prod">16 articoli</h6>
+                </div>
+   
+            </div>
+
+            <button class="left-arrow"><i class="fa-solid fa-angle-left"></i></button>
+            <button class="right-arrow"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+
+        <div class="lower-part">
+            <h1>In tendenza</h1>
+            <div class="right-lower">
+                <button>Tutti</button>
+                <button>Nuovi</button>
+                <button>Più votati</button>
+            </div>
+        </div>
+
+        <div class="trending-prod-container">
+                <div class="trending-prod">
+                    <img src="./public/img/anguria.png" alt="">
+                    <h4 class="lower-prod-name">Anguria</h4>
+                    <div class="lower-rating">
+                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                    </div>
+
+                    <div class="lower-price">
+                        <h4 class="price">€ 1.20 /kg</h4>
+                    </div>
+                    
+                </div>
+                <div class="trending-prod">
+                    <img src="./public/img/cantalupo.png" alt="">
+                    <h4 class="lower-prod-name">Cantalupo</h4>
+                    <div class="lower-rating">
+                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                        <i class="fa-regular fa-star" style="color: #FFD43B;"></i>
+                        <i class="fa-regular fa-star" style="color: #FFD43B;"></i>
+                    </div>
+
+                    <div class="lower-price">
+                        <h4 class="price">€ 1.80</h4>
+                    </div>
+
+                </div>
+                <div class="trending-prod">
+                    <img src="./public/img/ciliegia.png" alt="">
+                    <h4 class="lower-prod-name">Ciliegia</h4>
+                    <div class="lower-rating">
+                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                        <i class="fa-regular fa-star" style="color: #FFD43B;"></i>
+                    </div>
+
+                    <div class="lower-price">
+                        <h4 class="price">€ 6.00</h4>
+                    </div>
+                </div>
+                <div class="trending-prod">
+                    <img src="./public/img/fragola.png" alt="">
+                    <h4 class="lower-prod-name">Fragola</h4>
+                    <div class="lower-rating">
+                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                        <i class="fa-regular fa-star" style="color: #FFD43B;"></i>
+                    </div>
+
+                    <div class="lower-price">
+                        <h4 class="price">€ 5.00</h4>
+                    </div>
+                </div>
+                <div class="trending-prod">
+                    <img src="./public/img/kiwi.png" alt="">
+                    <h4 class="lower-prod-name">Kiwi</h4>
+                    <div class="lower-rating">
+                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                        <i class="fa-regular fa-star" style="color: #FFD43B;"></i>
+                        <i class="fa-regular fa-star" style="color: #FFD43B;"></i>
+                        <i class="fa-regular fa-star" style="color: #FFD43B;"></i>
+                    </div>
+
+                    <div class="lower-price">
+                        <h4 class="price">€ 3.50</h4>
+                    </div>
+                </div>
+                <div class="trending-prod">
+                    <img src="./public/img/mela.png" alt="">
+                    <h4 class="lower-prod-name">Mela</h4>
+                    <div class="lower-rating">
+                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                        <i class="fa-regular fa-star" style="color: #FFD43B;"></i>
+                    </div>
+
+                    <div class="lower-price">
+                        <h4 class="price">€ 2.50</h4>
+                    </div>
+                    
+                </div>
+                <div class="trending-prod">
+                    <img src="./public/img/nespola.png" alt="">
+                    <h4 class="lower-prod-name">Nespola</h4>
+                    <div class="lower-rating">
+                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                        <i class="fa-regular fa-star" style="color: #FFD43B;"></i>
+                    </div>
+                    
+                    <div class="lower-price">
+                        <h4 class="price">€ 4.50</h4>
+                    </div>
+                </div>
+                <div class="trending-prod">
+                    <img src="./public/img/pera.png" alt="">
+                    <h4 class="lower-prod-name">Pera</h4>
+                    <div class="lower-rating">
+                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                    </div>
+
+                    <div class="lower-price">
+                        <h4 class="price">€ 2.70</h4>
+                    </div>
+                </div>
+            </div>
+
     </main>
 
-    <script type="module" src="./scripts/index.js" defer></script>
-    <script type="module" src="./scripts/products.js" type="module" defer></script>
-    <script>window.aichatbotApiKey="c3fc8b3f-7e2a-4a8e-acd5-9a688227a8e4"; window.aichatbotProviderId="f9e9c5e4-6d1a-4b8c-8d3f-3f9e9c5e46d1";</script><script src="https://script.chatlab.com/aichatbot.js" id="c3fc8b3f-7e2a-4a8e-acd5-9a688227a8e4" defer></script>
+
+
+    <footer>
+        <div class="footer-container">
+
+            <div class="first-box">
+                <div class="footer-logo">
+                    <img class="footer-logo-img" src="./public/img/comprafresco-high-resolution-logo-transparent.png" alt="">
+                </div>
+
+                <div class="footer-description">
+                    <p>Frutta e verdura fresca: consegniamo ogni giorno prodotti freschi e di qualità dalla fattoria alla tua tavola.</p>
+                </div>
+
+                <div class="footer-social">
+                    <a class="facebook" href=""><i class="fa-brands fa-facebook-f"></i></a>
+                    <a class="twitter" href=""><i class="fa-brands fa-x-twitter"></i></a>
+                    <a class="linkedin" href=""><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a class="instagram" href=""><i class="fa-brands fa-instagram"></i></a>
+                    
+                </div>
+            </div>
+
+            <div class="second-box">
+                <h3 class="box-title">Services</h3>
+                <ul class="footer-list">
+                    <li>Log In</li>
+                    <li>Wishlist</li>
+                    <li>Return policy</li>
+                    <li>Testimonial</li>
+                    <li>Shopping FAQs</li>
+                    <li>Privacy Policy</li>
+                </ul>
+            </div>
+
+            <div class="third-box">
+                <h3 class="box-title">Company</h3>
+                <ul class="footer-list">
+                    <li>Home</li>
+                    <li>About us</li>
+                    <li>How its work</li>
+                    <li>Pages</li>
+                    <li>Blog</li>
+                    <li>Contact us</li>
+                </ul>
+            </div>
+
+            
+            <div class="fourth-box">
+                <h3 class="box-title">Contact</h3>
+                <div>
+                    <h2 class="address">4517 Washington Ave. Manchester, Kentucky 39495</h2>
+                    <div class="location-icon-container-1">
+                        <div class="location-icon"><i class="fa-solid fa-location-dot" style="color: #ffffff;"></i></div>
+                        
+                        <p>711-2880 Nulla St.</p>
+                    </div>
+
+                    <div class="location-icon-container-2">
+                        <div class="location-icon"><i class="fa-solid fa-phone" style="color: #ffffff;"></i></div>
+                        <div>
+                            <p>+964 742 44 763</p>
+                            <p class="orario">Mon - Sat: 9 AM - 5 PM</p>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+            </div>            
+
+        </div>
+    </footer>
+
+
 
 </body>
 </html>
