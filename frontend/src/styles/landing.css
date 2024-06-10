@@ -6,11 +6,13 @@
 
 * {
     margin: 0px;
-    font-family: soraSemibold
+    
 }
 
 body {
     overflow-x: hidden;
+    font-family: soraSemibold;
+    font-weight: 600;
 }
 
 .main-menu {

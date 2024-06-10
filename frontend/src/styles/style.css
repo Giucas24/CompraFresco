@@ -1,6 +1,5 @@
 * {
     margin: 0px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 main {
@@ -12,16 +11,15 @@ main {
 
 
 .main-container {
-    margin: 20px;
+    margin-top: 100px;
+    /*margin: 20px;*/
     border-radius: 30px;
     width: 100%;
     height: 100%;
-    background-color: rgb(226 232 240);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url('https://media.istockphoto.com/id/1409236261/it/foto/cibo-sano-background-alimentare-sano-frutta-verdura-bacche-mangiare-vegetariano-superfood.jpg?s=2048x2048&w=is&k=20&c=d2qTtuhypVDQ2Ws7yazSvzVCntUmJOsTFNHwki8KUXE=');
 
 }
 
@@ -46,28 +44,30 @@ main > h1 {
 
 
 .product-container {
-    width: 200px;
-    height: 200px;
-    background-color: rgb(241 245 249);
-    margin-left: 15px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    width: 310px;
+    height: 470px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    backdrop-filter: blur(12px) saturate(161%);
+    border: 1px solid #dee2e6;
+    /*padding: 80px 60px 40px 60px; */
+    margin-right: 25px;
+    margin-bottom: 25px;
+   /* backdrop-filter: blur(12px) saturate(161%);
     -webkit-backdrop-filter: blur(12px) saturate(161%);
     background-color: rgba(255, 255, 255, 0.39);
-    border-radius: 30px;
-    border: 1px solid rgba(209, 213, 219, 0.3);
-    
+    border: 1px solid rgba(209, 213, 219, 0.3); */
 }
 
-.product-container:hover {
-    outline: none;
-    border-color: rgb(248 250 252);
-    box-shadow: 0 0 10px rgb(248 250 252);
+.product-container .prod-figure img {
+    transition: transform 0.3s;
+
+}
+
+.product-container:hover .prod-figure img{
+    transform: scale(1.25); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+
 }
 
 
@@ -77,6 +77,41 @@ main > h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 100px;
+}
+
+.prod-details {
+    width: 311.6px;
+    border-top: 1px solid #dee2e6;
+    display: flex;
+    justify-items: center;
+    flex-wrap: wrap;
+}
+
+
+
+.prod-category {
+    width: 310px;
+    margin-top: 10px;
+    margin-left: 20px;
+    color: rgb(34 197 94);
+    font-size: 14px;
+}
+
+.prod-name {
+    width: 310px;
+    margin-top: 10px;
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.prod-price {
+    width: 310px;
+    margin-top: 10px;
+    margin-left: 20px;
+    color: rgb(34 197 94);
+    font-size: 16px;
+    margin-bottom: 10px;
 }
 
 .link-to-prod {
@@ -88,8 +123,8 @@ main > h1 {
 }
 
 .prod-img {
-    height: 150px;
-    width: 150px;
+    height: 200px;
+    width: 200px;
     object-fit: contain;
 }
 
@@ -118,3 +153,87 @@ main > h1 {
 
 
 
+.top-img-container {
+    width: 100%;
+    height: 315px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.pexels.com/photos/4913534/pexels-photo-4913534.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size: cover;
+    background-position-y: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top-img-text-upper p {
+    font-size: 64px;
+    color: #FFFFFF;
+}
+
+.top-img-text-lower {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.top-img-text-lower ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+}
+
+.top-img-text-lower ul li {
+    color: #FFFFFF;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.top-img-text-lower ul li:first-child:hover {
+    color: rgb(34 197 94);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+
+.dot {
+    content: "\2027";
+    font-size: 35px;
+}
+
+
+.page-num-container ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+}
+
+.page-num-container {
+    margin-top: 30px;
+}
+
+.page-num-container ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgba(85, 85, 85, 0.2);
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.page-num-container ul li:first-child {
+    background-color: rgb(34 197 94);
+    color: #FFFFFF;
+    cursor: auto;
+}
+
+.page-num-container ul li:hover {
+    background-color: rgb(34 197 94);
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: 0.3s;
+}

@@ -14,6 +14,9 @@ export default class Product {
                 const link = document.createElement('a')
                 const prodImg = document.createElement('img')
                 const prodName = document.createElement('p')
+                const prodDetails = document.createElement('div')
+                const prodCategory = document.createElement('p')
+                const prodPrice = document.createElement('p')
         
                 // IMPOSTO LA CLASSE
                 prodContainer.setAttribute('class', 'product-container')
@@ -22,18 +25,28 @@ export default class Product {
                 prodImg.setAttribute('src', this.product.imgSrc)
                 link.setAttribute('class', 'link-to-prod')
                 link.setAttribute('href', './product.html#' + this.product.prodName) 
-                prodName.setAttribute('class', 'prodName')
+                prodName.setAttribute('class', 'prod-name')
+                prodDetails.setAttribute('class', 'prod-details')
+                prodCategory.setAttribute('class', 'prod-category')
+                prodPrice.setAttribute('class', 'prod-price')
         
                 // APPENDCHILD
                 prodListContainer.appendChild(prodContainer)
                 prodContainer.appendChild(prodFigure)
                 prodFigure.appendChild(link)
                 link.appendChild(prodImg)
-                prodContainer.appendChild(prodName)
+                //prodContainer.appendChild(prodName)
+                prodContainer.appendChild(prodDetails)
+                prodDetails.appendChild(prodCategory)
+                prodDetails.appendChild(prodName)
+                prodDetails.appendChild(prodPrice)
 
                 let nameNormal = this.product.prodName;
                 let nameUpperFirst = nameNormal[0].toUpperCase() + nameNormal.slice(1);
                 prodName.textContent = nameUpperFirst;
+
+                prodCategory.textContent= 'Frutta'
+                prodPrice.textContent = this.product.price + ' €';
         
         
                 prodFigure.addEventListener("mouseover", () => {
