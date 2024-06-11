@@ -189,9 +189,9 @@ main > h1 {
     margin-right: 10px;
 }
 
-.top-img-text-lower ul li:first-child:hover {
-    color: rgb(34 197 94);
+.home-allprods-button:hover {
     cursor: pointer;
+    color: rgb(34 197 94);
     transition: 0.5s;
 }
 
@@ -237,3 +237,9 @@ main > h1 {
     cursor: pointer;
     transition: 0.3s;
 }
+
+.home-allprods-button {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
