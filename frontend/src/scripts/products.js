@@ -66,7 +66,7 @@ export default class Product {
                 // CREO GLI ELEMENTI
                 const prodBox = document.createElement('div');
                 const descBox = document.createElement('div');
-                const buyContainer = document.createElement('div');
+                //const buyContainer = document.createElement('div');
                 const figure = document.createElement('figure');
                 const img = document.createElement('img');
                 const descUl = document.createElement('ul');
@@ -77,49 +77,74 @@ export default class Product {
         
                 // Quantità
                 const quantityBox = document.createElement('div');
+                const quantityButton = document.createElement('div');
                 const minButton = document.createElement('button');
                 const minIcon = document.createElement('i');
                 const plusButton = document.createElement('button');
                 const plusIcon = document.createElement('i');
                 const quantity = document.createElement('p');
+                // Aggiungi al carrello
+                const cartBox = document.createElement('div');
+                const cartText = document.createElement('p');
+                const cartIcon = document.createElement('i');
+                // Preferiti
+                const saveBox = document.createElement('button');
+                const saveIcon = document.createElement('i');
         
                 // IMPOSTO LE CLASSI
                 prodBox.setAttribute('id', 'prod-box');     // box immagine
                 descBox.setAttribute('id', 'desc-box');     // box descrizione
-                buyContainer.setAttribute('id', 'buy-container');       // box aggiungi al carrello
-                figure.setAttribute('class', 'prod-figure');
+               // buyContainer.setAttribute('id', 'buy-container');       // box aggiungi al carrello
+                figure.setAttribute('class', 'prod-figure-single');
                 img.setAttribute('src', this.product.imgSrc);
-                img.setAttribute('class', 'prod-img')
+                img.setAttribute('class', 'prod-img-single')
                 descUl.setAttribute('class', 'desc-ul');
-                prodName.setAttribute('class', 'prod-name');
-                description.setAttribute('class', 'description');
+                prodName.setAttribute('id', 'prod-name-single');
+                description.setAttribute('id', 'description');
                 rating.setAttribute('class', 'rating');
-                price.setAttribute('class', 'price');
+                price.setAttribute('id', 'price');
+                // Quantità
                 quantityBox.setAttribute('class', 'quantity-box');
+                quantityButton.setAttribute('class', 'quantity-button')
                 minButton.setAttribute('class', 'min-button');
                 minIcon.setAttribute('class','fa-solid fa-minus');
                 plusButton.setAttribute('class', 'plus-button');
                 plusIcon.setAttribute('class','fa-solid fa-plus');
                 quantity.setAttribute('class', 'quantity');
+                // Aggiungi al carrello
+                cartBox.setAttribute('class', 'cart-box')
+                cartText.setAttribute('class', 'cart-text')
+                cartIcon.setAttribute('class', 'fa-solid fa-basket-shopping cart-icon')
+                // Preferiti
+                saveBox.setAttribute('class', 'save-box')
+                saveIcon.setAttribute('class', 'fa-solid fa-heart save-icon')
         
                 // APPEND CHILD
                 mainContent.appendChild(prodBox);
                 mainContent.appendChild(descBox);
-                mainContent.appendChild(buyContainer);
+                //mainContent.appendChild(buyContainer);
                 prodBox.appendChild(figure);
                 figure.appendChild(img);
                 descBox.appendChild(descUl);
                 descUl.appendChild(prodName);
-                descUl.appendChild(description);
-                descUl.appendChild(rating);
                 descUl.appendChild(price);
+                descUl.appendChild(description);
+                //descUl.appendChild(price);
                 descBox.appendChild(quantityBox);
-                quantityBox.appendChild(minButton);
+                // Quantità
+                quantityBox.appendChild(quantityButton)
+                quantityButton.appendChild(minButton);
                 minButton.appendChild(minIcon)
-                quantityBox.appendChild(quantity);
-                quantityBox.appendChild(plusButton);
+                quantityButton.appendChild(quantity);
+                quantityButton.appendChild(plusButton);
                 plusButton.appendChild(plusIcon)
-        
+                // Aggiungi al carrello
+                quantityBox.appendChild(cartBox)
+                cartBox.appendChild(cartText)
+                cartBox.appendChild(cartIcon)
+                // Preferiti
+                quantityBox.append(saveBox);
+                saveBox.appendChild(saveIcon);
 
                 // TEXT CONTEXT
                 let nameNormal = product.prodName;
@@ -127,9 +152,12 @@ export default class Product {
                 prodName.textContent = nameUpperFirst;
                 description.textContent = product.description;
                 this.printRating(rating, this.product.rating);             
-                price.textContent = product.price + ' €';
+                price.textContent = product.price + ' €/kg';
                 quantity.textContent = 1;
                 let currQuantity = 1;
+
+                // Aggiungi al carrello
+                cartText.textContent = 'AGGIUNGI';
         
                 
                 minButton.addEventListener('click', (e) => {

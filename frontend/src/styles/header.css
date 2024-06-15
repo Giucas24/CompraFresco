@@ -21,6 +21,8 @@
     font-weight: light;
     font-family: soraSemibold;
     font-weight: 300;
+    -webkit-box-shadow: 0px 6px 11px -8px rgba(174,174,174,0.9); 
+    box-shadow: 0px 6px 11px -8px rgba(174,174,174,0.9);
 }
 
 .logo-container {
@@ -29,6 +31,59 @@
     margin-left: 40px;
     cursor: pointer;
 }
+
+.main-menu {
+    margin-left: 150px;
+}
+
+#info-menu{
+    display: flex;
+    list-style: none;
+    
+}
+
+
+#info-menu li {
+    margin-left: 25px;
+    font-size: 16px;
+    cursor: pointer;
+
+}
+
+#info-menu li:hover {
+    color: rgb(34 197 94);
+    transition: 0.2s;
+}
+
+
+/* ul li:hover {
+    color: rgb(34 197 94);
+
+} */
+
+.right-header ul {
+    display: flex;
+    list-style: none;
+}
+
+#right-icons {
+    padding: 0px;
+}
+
+#right-icons li {
+    font-size: 25px;
+    margin-left: 30px;
+    cursor: pointer;
+}
+
+#right-icons li:last-child {
+    margin-right:30px;
+}
+
+.fa-magnifying-glass {
+    color: rgb(255, 255, 255);
+}
+
 
 .search-bar-container {
     display: flex;
