@@ -22,9 +22,11 @@ export default class Product {
                 prodContainer.setAttribute('class', 'product-container')
                 prodFigure.setAttribute('class', 'prod-figure')
                 prodImg.setAttribute('class', 'prod-img')
-                prodImg.setAttribute('src', this.product.imgSrc)
+                ////prodImg.setAttribute('src', this.product.imgSrc)
+                prodImg.setAttribute('src', product.imgSrc)
                 link.setAttribute('class', 'link-to-prod')
-                link.setAttribute('href', './product.html#' + this.product.prodName) 
+                ////link.setAttribute('href', './product.html#' + this.product.prodName) 
+                link.setAttribute('href', './product.html#' + product.prodName) 
                 prodName.setAttribute('class', 'prod-name')
                 prodDetails.setAttribute('class', 'prod-details')
                 prodCategory.setAttribute('class', 'prod-category')
@@ -41,12 +43,14 @@ export default class Product {
                 prodDetails.appendChild(prodName)
                 prodDetails.appendChild(prodPrice)
 
-                let nameNormal = this.product.prodName;
+                ////let nameNormal = this.product.prodName;
+                let nameNormal = product.prodName;
                 let nameUpperFirst = nameNormal[0].toUpperCase() + nameNormal.slice(1);
                 prodName.textContent = nameUpperFirst;
 
                 prodCategory.textContent= 'Frutta'
-                prodPrice.textContent = this.product.price + ' €';
+                ////prodPrice.textContent = this.product.price + ' €';
+                prodPrice.textContent = product.price + ' €';
         
         
                 prodFigure.addEventListener("mouseover", () => {
@@ -70,9 +74,11 @@ export default class Product {
                 const figure = document.createElement('figure');
                 const img = document.createElement('img');
                 const descUl = document.createElement('ul');
-                const prodName = document.createElement('li');
+                const prodNameBox = document.createElement('div');
+                const prodName = document.createElement('span');
+                const reviewNumber = document.createElement('span')
                 const description = document.createElement('li');
-                const rating = document.createElement('li');
+                /* const rating = document.createElement('li'); */
                 const price = document.createElement('li');
         
                 // Quantità
@@ -90,6 +96,19 @@ export default class Product {
                 // Preferiti
                 const saveBox = document.createElement('button');
                 const saveIcon = document.createElement('i');
+                // Venditore, categoria e problemi 
+                const lowerBox = document.createElement('div');
+                const sellerBox = document.createElement('div');
+                const sellerText = document.createElement('span');
+                const sellerName = document.createElement('span');
+                const categoryContainer = document.createElement('div');
+                const categoryText = document.createElement('span');
+                const categoryName = document.createElement('span');
+                const ratingBox = document.createElement('div');
+                const rating = document.createElement('span');
+                const problemBox = document.createElement('div');
+                const problemIcon = document.createElement('i');
+                const problemText = document.createElement('span');
         
                 // IMPOSTO LE CLASSI
                 prodBox.setAttribute('id', 'prod-box');     // box immagine
@@ -99,7 +118,9 @@ export default class Product {
                 img.setAttribute('src', this.product.imgSrc);
                 img.setAttribute('class', 'prod-img-single')
                 descUl.setAttribute('class', 'desc-ul');
+                prodNameBox.setAttribute('class', 'prod-name-box')
                 prodName.setAttribute('id', 'prod-name-single');
+                reviewNumber.setAttribute('class', 'review-number')
                 description.setAttribute('id', 'description');
                 rating.setAttribute('class', 'rating');
                 price.setAttribute('id', 'price');
@@ -118,6 +139,17 @@ export default class Product {
                 // Preferiti
                 saveBox.setAttribute('class', 'save-box')
                 saveIcon.setAttribute('class', 'fa-solid fa-heart save-icon')
+                // Venditore, categoria e problemi 
+                lowerBox.setAttribute('class', 'lower-box')
+                sellerText.setAttribute('class', 'seller-text')
+                sellerName.setAttribute('class', 'seller-name')
+                categoryText.setAttribute('class', 'category-text')
+                categoryName.setAttribute('class', 'category-name')
+                sellerBox.setAttribute('class', 'seller-box')
+                categoryContainer.setAttribute('class', 'category-container')
+                problemBox.setAttribute('class', 'problem-box')
+                problemIcon.setAttribute('class', 'fa-solid fa-circle-exclamation problem-icon')
+                problemText.setAttribute('class', 'problem-text')
         
                 // APPEND CHILD
                 mainContent.appendChild(prodBox);
@@ -126,7 +158,10 @@ export default class Product {
                 prodBox.appendChild(figure);
                 figure.appendChild(img);
                 descBox.appendChild(descUl);
-                descUl.appendChild(prodName);
+                descUl.appendChild(prodNameBox);
+                prodNameBox.appendChild(prodName);
+                prodNameBox.appendChild(rating);
+                prodNameBox.appendChild(reviewNumber);
                 descUl.appendChild(price);
                 descUl.appendChild(description);
                 //descUl.appendChild(price);
@@ -145,6 +180,19 @@ export default class Product {
                 // Preferiti
                 quantityBox.append(saveBox);
                 saveBox.appendChild(saveIcon);
+                // Venditore, categoria e problemi 
+                descBox.appendChild(lowerBox);
+                lowerBox.appendChild(sellerBox);
+                sellerBox.appendChild(sellerText)
+                sellerBox.appendChild(sellerName)
+                lowerBox.appendChild(categoryContainer)
+                categoryContainer.appendChild(categoryText)
+                categoryContainer.appendChild(categoryName)
+                lowerBox.appendChild(problemBox)
+                problemBox.appendChild(problemIcon)                
+                problemBox.appendChild(problemText)                
+                
+
 
                 // TEXT CONTEXT
                 let nameNormal = product.prodName;
@@ -155,6 +203,15 @@ export default class Product {
                 price.textContent = product.price + ' €/kg';
                 quantity.textContent = 1;
                 let currQuantity = 1;
+
+                reviewNumber.textContent = '(' + product.reviewNumber + ' Recensioni)';
+
+                // Azienda, categoria e problemi 
+                sellerText.textContent = 'Venditore: ';
+                sellerName.textContent = product.sellerName;
+                categoryText.textContent = 'Categoria: ';
+                categoryName.textContent = product.category;
+                problemText.textContent = 'Segnala un problema per questo articolo'
 
                 // Aggiungi al carrello
                 cartText.textContent = 'AGGIUNGI';

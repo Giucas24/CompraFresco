@@ -53,6 +53,7 @@
 .desc-ul {
     list-style: none;
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: flex-start;
 }
@@ -62,6 +63,17 @@
     font-size: 26px;
     font-weight: 700;
     color: #161616;
+    margin-right: 130px;
+}
+
+.prod-name-box {
+    display: flex;
+    align-items: center;
+}
+
+.review-number{
+    margin-left: 15px;
+    font-weight: 300;
 }
 
 #description {
@@ -90,7 +102,6 @@
 
 .quantity-box {
     display: flex;
-    margin-top: 20px;
     justify-content: flex-start;
     margin-left: 40px;
     margin-top: 30px;
@@ -209,4 +220,83 @@
 .save-icon:hover {
     color: rgb(34 197 94);
     transition: 0.3s;
+}
+
+.lower-box {
+    max-width: 350px;
+    /* background-color: red; */
+    height: 125px;
+    margin-left: 40px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.seller-text {
+    color: #555555;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.seller-name {
+    font-size: 16px;
+    color: #222222;
+    font-weight: 200;
+}
+
+.seller-name:hover {
+    color: rgb(34 197 94);
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: 200;
+}
+
+/* .category-container {
+     margin-top: 20px; 
+} */
+
+
+.category-text {
+    color: #555555;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.category-name {
+    font-size: 16px;
+    color: #222222;
+    font-weight: 200;
+}
+
+.category-name:hover {
+    color: rgb(34 197 94);
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: 200;
+}
+
+.problem-box {
+    display: flex;
+    align-items: center;
+}
+
+
+.problem-icon {
+    color: #555555;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+
+.problem-text {
+    font-size: 14px;
+    color: #222222;
+    font-weight: 200;
+}
+
+.problem-text:hover {
+    cursor: pointer;
+    color: rgb(34 197 94);
 }

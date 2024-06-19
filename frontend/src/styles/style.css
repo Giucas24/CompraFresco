@@ -221,7 +221,7 @@ main > h1 {
     margin-top: 30px;
 }
 
-.page-num-container ul li {
+.page-button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -230,15 +230,16 @@ main > h1 {
     border: 1px solid rgba(85, 85, 85, 0.2);
     border-radius: 50%;
     margin-right: 10px;
+    cursor: pointer;
 }
 
-.page-num-container ul li:first-child {
+/* .page-num-container ul li:nth-child(2) {
     background-color: rgb(34 197 94);
     color: #FFFFFF;
-    cursor: auto;
-}
+    cursor: pointer;
+} */
 
-.page-num-container ul li:hover {
+.page-button:hover {
     background-color: rgb(34 197 94);
     color: #FFFFFF;
     cursor: pointer;
@@ -250,3 +251,19 @@ main > h1 {
     color: #FFFFFF;
 }
 
+
+
+
+.active-page {
+    background-color: rgb(34, 197, 94);
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgba(85, 85, 85, 0.2);
+    border-radius: 50%;
+    margin-right: 10px;
+    cursor: pointer;
+}
