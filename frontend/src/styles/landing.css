@@ -37,7 +37,7 @@ body {
 }
 
 
- @keyframes slide {
+/*  @keyframes slide {
     0% {
         transform: translateX(0);
     }
@@ -62,7 +62,7 @@ body {
     100% {
         transform: translateX(-300%);
     }
-} 
+}  */
 .wrapper img{
     width: 100%;
 }
@@ -273,3 +273,45 @@ body {
     font-size: 16px;
 }
 
+.go-to-prod {
+    position: absolute;
+    z-index: 10;
+    top: 520px;
+    left: 150px;
+    background-color: rgb(34 197 94);
+    border: none;
+    padding: 20px;
+    cursor: pointer;
+}
+
+ .go-to-prod:hover {
+    background-color: transparent;
+    border: 1px solid rgb(34 197 94);
+    transition: 0.5s;
+}
+
+.go-to-prod button {
+    background-color: transparent;
+    border: none;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.go-to-prod:hover button {
+    color: rgb(34 197 94);
+    background-color: transparent;
+    transition: 0.5s;
+    font-family: soraSemibold;
+    cursor: pointer;
+}
+
+
+.landing-text {
+    position: absolute;
+    font-size: 45px;
+    width: 645px;
+    height: 265px;
+    top: 200px;
+    left: 150px;
+    color: #191919;
+}
