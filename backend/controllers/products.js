@@ -4,10 +4,10 @@ const path = require('path')
 
 
 module.exports = {
-    /* getAllProducts: (req,res) => {
+     getAllEndPoint: (req,res) => {
         Product.find({})
         .then(r => res.json(r))
-    }, */
+    }, 
 
     getAllProducts: async (req,res) => {
         const page = parseInt(req.query.page) || 1; // pagina corrente, default è 1

@@ -315,3 +315,15 @@ export default class Product {
 
 
 
+fetch('./api/products/allEndPoint')
+.then(res => {
+    if (res.ok) return res.json();
+    else throw new Error('Si è verificato un errore nella comunicazione con il server');
+})
+.then(prod => {
+    //containerElement.innerHTML = '';
+    prod.forEach(e => {
+        new Product(prodListContainer, e).getAvailableProducts(prodListContainer, prod)
+    })
+    
+})

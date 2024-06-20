@@ -16,7 +16,8 @@ router.use(bodyParser.json());
 
 
 
-router.get('/all', productsController.getAllProducts)
+router.get('/all', productsController.getAllProducts)       // questo è filtrato a 8 per pagina
+router.get('/allEndPoint', productsController.getAllEndPoint)     // questi sono tutti per darli al chatbot come knowledge base
 
 
 router.get('/:nomeProdotto', productsController.getProductByprodName)
