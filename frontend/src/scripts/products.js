@@ -26,7 +26,7 @@ export default class Product {
                 prodImg.setAttribute('src', product.imgSrc)
                 link.setAttribute('class', 'link-to-prod')
                 ////link.setAttribute('href', './product.html#' + this.product.prodName) 
-                link.setAttribute('href', './product.html#' + product.prodName) 
+                link.setAttribute('href', './product.html#' + product.nomeProdotto) 
                 prodName.setAttribute('class', 'prod-name')
                 prodDetails.setAttribute('class', 'prod-details')
                 prodCategory.setAttribute('class', 'prod-category')
@@ -44,13 +44,13 @@ export default class Product {
                 prodDetails.appendChild(prodPrice)
 
                 ////let nameNormal = this.product.prodName;
-                let nameNormal = product.prodName;
+                let nameNormal = product.nomeProdotto;
                 let nameUpperFirst = nameNormal[0].toUpperCase() + nameNormal.slice(1);
                 prodName.textContent = nameUpperFirst;
 
-                prodCategory.textContent= 'Frutta'
+                prodCategory.textContent= product.categoria;
                 ////prodPrice.textContent = this.product.price + ' €';
-                prodPrice.textContent = product.price + ' €';
+                prodPrice.textContent = product.prezzo + ' €';
         
         
                 prodFigure.addEventListener("mouseover", () => {
@@ -195,22 +195,22 @@ export default class Product {
 
 
                 // TEXT CONTEXT
-                let nameNormal = product.prodName;
+                let nameNormal = product.nomeProdotto;
                 let nameUpperFirst = nameNormal[0].toUpperCase() + nameNormal.slice(1);
                 prodName.textContent = nameUpperFirst;
-                description.textContent = product.description;
-                this.printRating(rating, this.product.rating);             
-                price.textContent = product.price + ' €/kg';
+                description.textContent = product.descrizione;
+                this.printRating(rating, this.product.valutazione);             
+                price.textContent = product.prezzo + ' €/kg';
                 quantity.textContent = 1;
                 let currQuantity = 1;
 
-                reviewNumber.textContent = '(' + product.reviewNumber + ' Recensioni)';
+                reviewNumber.textContent = '(' + product.numeroRecensioni + ' Recensioni)';
 
                 // Azienda, categoria e problemi 
                 sellerText.textContent = 'Venditore: ';
-                sellerName.textContent = product.sellerName;
+                sellerName.textContent = product.nomeVenditore;
                 categoryText.textContent = 'Categoria: ';
-                categoryName.textContent = product.category;
+                categoryName.textContent = product.categoria;
                 problemText.textContent = 'Segnala un problema per questo articolo'
 
                 // Aggiungi al carrello
@@ -237,6 +237,48 @@ export default class Product {
             }
 
             printRating(element, ratingValue) {
+                if (Number.isInteger(ratingValue)) {
+                    for (let i = 0; i < ratingValue; i++) {
+                        const checkedStar = document.createElement('i');
+                        checkedStar.setAttribute('class', 'fa-solid fa-star');
+                        checkedStar.setAttribute('style', 'color: #FFD43B;');
+                        element.appendChild(checkedStar);
+                    }
+            
+                    let diff = 5 - ratingValue;
+                    for (let i = 0; i < diff; i++) {
+                        const uncheckedStar = document.createElement('i');
+                        uncheckedStar.setAttribute('class', 'fa-solid fa-star');
+                        element.appendChild(uncheckedStar);
+                    }
+                } else {
+                    let ratingValueInteger = ratingValue - 0.5;
+                    for (let i = 0; i < ratingValueInteger; i++) {
+                        const checkedStar = document.createElement('i');
+                        checkedStar.setAttribute('class', 'fa-solid fa-star');
+                        checkedStar.setAttribute('style', 'color: #FFD43B;');
+                        element.appendChild(checkedStar);
+                    }
+
+                    const checkedStar = document.createElement('i');
+                    checkedStar.setAttribute('class', 'fa-solid fa-star-half-stroke');
+                    checkedStar.setAttribute('style', 'color: #FFD43B;');
+                    element.appendChild(checkedStar);
+
+                    let diff = 5 - ratingValue;
+                    if (diff > 0.5) {
+                        for (let i = 0; i < Math.trunc(diff); i++) {
+                            const uncheckedStar = document.createElement('i');
+                            uncheckedStar.setAttribute('class', 'fa-solid fa-star');
+                            element.appendChild(uncheckedStar);
+                        }
+                    }
+                    
+                }
+                
+            }
+
+            /* printRating(element, ratingValue) {
                 for (let i = 0; i < ratingValue; i++) {
                     const checkedStar = document.createElement('i');
                     checkedStar.setAttribute('class', 'fa-solid fa-star');
@@ -250,7 +292,7 @@ export default class Product {
                     uncheckedStar.setAttribute('class', 'fa-solid fa-star');
                     element.appendChild(uncheckedStar);
                 }
-            }
+            } */
 
 
             

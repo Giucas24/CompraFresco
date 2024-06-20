@@ -19,7 +19,7 @@ router.use(bodyParser.json());
 router.get('/all', productsController.getAllProducts)
 
 
-router.get('/:prodName', productsController.getProductByprodName)
+router.get('/:nomeProdotto', productsController.getProductByprodName)
 
 router.post('/newProduct', productsController.postNewProduct)
 

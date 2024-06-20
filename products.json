@@ -1,0 +1,33 @@
+{
+  "nomeProdotto": "Anguria",
+  "descrizione": "Scopri la dolcezza e la freschezza delle nostre angurie selezionate a mano! Provenienti dai migliori coltivatori locali, le nostre angurie sono coltivate con cura per garantire una qualità superiore e un gusto irresistibile.",
+  "provenienza": "Italia, Sicilia",
+  "metodoColtivazione": "Convenzionale",
+  "certificazioni": ["Certificazione Global GAP"],
+  "valoriNutrizionali": {
+    "calorie": "30 kcal",
+    "carboidrati": "8 g",
+    "zuccheri": "6 g",
+    "fibre": "0.4 g",
+    "vitaminaC": "8.1 mg",
+    "potassio": "112 mg"
+  },
+  "beneficiSalute": "L'anguria è ricca di acqua e antiossidanti, aiuta a mantenere l'idratazione e supporta la salute cardiovascolare.",
+  "stagionalita": "Da giugno a settembre",
+  "disponibilita": "Disponibile in estate",
+  "usoInCucina": "L'anguria è perfetta da sola, in insalate di frutta, frullati o sorbetti.",
+  "conservazione": "Conservare in frigorifero per mantenerla fresca fino a 1 settimana.",
+  "prezzo": 1.2,
+  "valutazione": 5,
+  "imgSrc": "../public/img/anguria.png",
+  "quantita": "Al chilo, in pezzi da 5 kg, 10 kg",
+  "curiosita": "L'anguria è composta per oltre il 90% da acqua.",
+  "varieta": ["Sugar Baby", "Crimson Sweet", "Jubilee"],
+  "servizioClienti": "Contatta il nostro servizio clienti al numero 800-123-456 o via email a servizio.clienti@esempio.com.",
+  "politicaReso": "Accettiamo resi entro 14 giorni dall'acquisto, con rimborso completo o sostituzione del prodotto.",
+  "nomeVenditore": "Sapori della Terra",
+  "categoria": "Frutta",
+  "numeroRecensioni": "12",
+  "specieProdotto": "",
+  "indirizzoTerreno": "" 
+}

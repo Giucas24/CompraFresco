@@ -5,7 +5,7 @@ const path = require('path')
 
 module.exports = {
     /* getAllProducts: (req,res) => {
-        Product.find({}).limit(8)
+        Product.find({})
         .then(r => res.json(r))
     }, */
 
@@ -43,7 +43,7 @@ module.exports = {
 
 
     getProductByprodName: (req, res) => {
-        Product.findOne({prodName: req.params.prodName})
+        Product.findOne({nomeProdotto: req.params.nomeProdotto})
         .then(r => res.json(r))
         //res.sendFile(path.join(__dirname, '..' , 'static', 'media' , 'product.html'))
         
