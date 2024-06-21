@@ -29,6 +29,7 @@ db.once("open", () => {
   console.log("Connesso al DB")
   app.listen(3000, () => {
     console.log("App in ascolto alla porta 3000")
+    
   })
 })
 

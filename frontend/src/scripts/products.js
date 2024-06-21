@@ -1,11 +1,15 @@
 const mainContent = document.querySelector('#main-content'); 
-const prodListContainer = document.querySelector('#product-list-container')
+const prodListContainer = document.querySelector('#product-list-container');
+
+
 
 export default class Product {
     constructor(mainContent, product) {
         this.mainContent = mainContent;
         this.product = product
     }
+
+    
 
     getAvailableProducts(prodListContainer, product) {
                 // CREO GLI ELEMENTI DA APPENDERE A prodContainer
@@ -44,11 +48,13 @@ export default class Product {
                 prodDetails.appendChild(prodPrice)
 
                 ////let nameNormal = this.product.prodName;
-                let nameNormal = product.nomeProdotto;
+                let nameNormal = this.product.nomeProdotto;
                 let nameUpperFirst = nameNormal[0].toUpperCase() + nameNormal.slice(1);
                 prodName.textContent = nameUpperFirst;
 
-                prodCategory.textContent= product.categoria;
+                let categoryNormal = this.product.categoria;
+                let categoryUpperFirst = categoryNormal[0].toUpperCase() + categoryNormal.slice(1)
+                prodCategory.textContent= categoryUpperFirst;
                 ////prodPrice.textContent = this.product.price + ' €';
                 prodPrice.textContent = product.prezzo + ' €';
         

@@ -48,7 +48,7 @@ const prodListContainer = document.querySelector('#product-list-container')
 
 
 // FETCH
-document.addEventListener('DOMContentLoaded', () => {
+/*  document.addEventListener('DOMContentLoaded', () => {
     let currentPage = 1;
     const limit = 8;
 
@@ -59,6 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const page2Button = document.querySelector('#page-2');
     const page3Button = document.querySelector('#page-3');
     const nextPagesButton = document.querySelector('#next-pages');
+    
 
     const pageButtons = [prevPageButton, page1Button, page2Button, page3Button, nextPagesButton];
 
@@ -83,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(products);
         productsContainer.innerHTML = '';
         products.forEach(product => {
-            const productInstance = new Product(prodListContainer, product); // Assumendo che Product sia la tua classe
+            const productInstance = new Product(prodListContainer, product);
             productInstance.getAvailableProducts(prodListContainer, product);
         });
     };
@@ -93,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
         page2Button.textContent = '2';
         page3Button.textContent = '3';
 
-        // Aggiorna lo stato dei bottoni
+        // Aggiorno lo stato dei bottoni
         prevPageButton.disabled = currentPage === 1;
         page1Button.disabled = currentPage === 1;
         page2Button.disabled = currentPage === 2;
@@ -102,12 +103,12 @@ document.addEventListener('DOMContentLoaded', () => {
         nextPagesButton.disabled = currentPage >= data.totalPages;
         
 
-        // Aggiorna lo stile dei bottoni
+        // Aggiorno lo stile dei bottoni
         pageButtons.forEach(button => {
             button.classList.remove('active-page');
         });
 
-        // Aggiungi classe active-page al pulsante corrente
+        // Aggiungo la classe active-page al pulsante corrente
         if (data.currentPage === 1) {
             page1Button.classList.add('active-page');
         } else if (data.currentPage === 2) {
@@ -151,7 +152,121 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fetch the initial set of products
     fetchProducts(currentPage);
 
-});
+});  */
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    let currentPage = 1;
+    const limit = 8;
+
+
+    const productsContainer = document.querySelector('#product-list-container');
+    const prevPageButton = document.querySelector('#prev-page');
+    const page1Button = document.querySelector('#page-1');
+    const page2Button = document.querySelector('#page-2');
+    const page3Button = document.querySelector('#page-3');
+    const nextPagesButton = document.querySelector('#next-pages');
+    const filter = document.querySelector('#filter')
+    
+
+    const pageButtons = [prevPageButton, page1Button, page2Button, page3Button, nextPagesButton];
+
+    const fetchProducts = async (page, filterValue = '') => {
+        
+        try {
+            const response = await fetch(`./api/products/all?page=${page}&limit=${limit}&filter=${filterValue}`);
+            if (!response.ok) {
+                throw new Error('Failed to fetch products');
+            }
+
+            const data = await response.json();
+            displayProducts(data.products);
+            updatePaginationControls(data);
+            document.body.scrollTop = document.documentElement.scrollTop = 0;
+        } catch (error) {
+            console.error('Error fetching products:', error);
+        }
+    };
+
+    const displayProducts = (products) => {
+  
+        productsContainer.innerHTML = '';
+        products.forEach(product => {
+            const productInstance = new Product(prodListContainer, product);
+            productInstance.getAvailableProducts(prodListContainer, product);
+        });
+    };
+    
+    const updatePaginationControls = (data) => {
+        page1Button.textContent = '1';
+        page2Button.textContent = '2';
+        page3Button.textContent = '3';
+
+        // Aggiorno lo stato dei bottoni
+        prevPageButton.disabled = currentPage === 1;
+        page1Button.disabled = currentPage === 1;
+        page2Button.disabled = currentPage === 2;
+        page3Button.disabled = currentPage === 3;
+
+        nextPagesButton.disabled = currentPage >= data.totalPages;
+        
+
+        // Aggiorno lo stile dei bottoni
+        pageButtons.forEach(button => {
+            button.classList.remove('active-page');
+        });
+
+        // Aggiungo la classe active-page al pulsante corrente
+        if (data.currentPage === 1) {
+            page1Button.classList.add('active-page');
+        } else if (data.currentPage === 2) {
+            page2Button.classList.add('active-page');
+        } else if (data.currentPage === 3) {
+            page3Button.classList.add('active-page');
+        } else {
+            nextPagesButton.classList.add('active-page');
+        }
+
+
+    };
+
+    prevPageButton.addEventListener('click', () => {
+        if (currentPage > 1) {
+            currentPage--;
+            fetchProducts(currentPage, filter.value);
+        }
+    });
+
+    page1Button.addEventListener('click', () => {
+        currentPage = 1;
+        fetchProducts(currentPage, filter.value);
+    });
+
+    page2Button.addEventListener('click', () => {
+        currentPage = 2;
+        fetchProducts(currentPage, filter.value);
+    });
+
+    page3Button.addEventListener('click', () => {
+        currentPage = 3;
+        fetchProducts(currentPage, filter.value);
+    });
+
+    nextPagesButton.addEventListener('click', () => {
+        currentPage++;
+        fetchProducts(currentPage, filter.value);
+    });
+
+    filter.addEventListener('change', () => {
+        currentPage = 1;
+        fetchProducts(currentPage, filter.value)
+    })
+
+    // Fetch the initial set of products
+    fetchProducts(currentPage);
+
+}); 
+
 
 
 

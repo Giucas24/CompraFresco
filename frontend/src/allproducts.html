@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CompraFresco</title>
     <link rel="stylesheet" href="./styles/style.css">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.4.2/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.4.2/uicons-bold-rounded/css/uicons-bold-rounded.css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./styles/header.css">
     <link rel="stylesheet" href="./styles/landing.css">
@@ -77,6 +79,52 @@
                     </ul>
                 </div>
             </div>
+        </div>
+
+        <div class="prod-number-filter-container">
+            <div class="prod-number-container">
+                <p class="prod-number">17 Prodotti in catalogo</p>
+            </div>
+
+            <div class="filter-container">
+                <div class="left-filter">
+                    <button class="filter-button">
+                        <i class="fa-solid fa-filter filter-icon"></i>
+                        <p class="filter-text">FILTRA</p>
+                    </button>
+                </div>
+
+                <div class="right-filter">
+                    <form action="">
+                        <select name="filter" id="filter">
+                            <optgroup label="Categoria">
+                                <option value="tutti-i-prodotti" selected>Tutti i prodotti</option>
+                                <option value="frutta">Frutta</option>
+                                <option value="verdura">Verdura</option>
+                                <option value="ortaggio">Ortaggio</option>
+                                <option value="tubero">Tubero</option>
+                            </optgroup>
+                            <optgroup label="Azienda">
+                                <option value="Sapori della Terra">Sapori della Terra</option>
+                                <option value="Delizie del Campo">Delizie del Campo</option>
+                            </optgroup>
+                            
+                            
+                        </select>
+                    </form>
+                    
+                </div>
+
+                <div class="right-filter-icons">
+                    <i class="fi fi-sr-grid grid-icon"></i>
+                    <!-- <i class="fi fi-br-menu-burger menu-icon"></i> -->
+                </div>
+                
+
+
+                
+            </div>
+            
         </div>
 
 

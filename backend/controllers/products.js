@@ -10,23 +10,55 @@ module.exports = {
     }, 
 
     getAllProducts: async (req,res) => {
+        const { page = 1, limit = 8, filter = ''} = req.query;
+        const query = {};
+
+        
+        if (filter && filter !== 'tutti-i-prodotti') {
+            if (['frutta', 'verdura', 'ortaggio', 'tubero'].includes(filter)) {
+                query.categoria = filter;
+            } else if (['Sapori della Terra', 'Delizie del Campo'].includes(filter)) {
+                query.nomeVenditore = filter.replace('_', ' ');
+            }
+        }
+
+
+        try {
+            const products = await Product.find(query)
+            .skip((page - 1) * limit)
+            .limit(Number(limit));
+
+            const totalProducts = await Product.countDocuments(query);
+            const totalPages = Math.ceil(totalProducts / limit);
+
+            res.json({
+                products,
+                currentPage: Number(page),
+                totalPages,
+            });
+        } catch(error) {
+            res.status(500).send(error)
+        }
+    },
+
+   /*   getAllProducts: async (req,res) => {
         const page = parseInt(req.query.page) || 1; // pagina corrente, default è 1
         const limit = parseInt(req.query.limit) || 8; // numero di prodotti per pagina, default è 8
-        /* console.log('pagina corrente: ' + page);
-        console.log('limite: ' + limit); */
+        //console.log('pagina corrente: ' + page);
+        //console.log('limite: ' + limit); 
 
         try {
             const startIndex = (page - 1) * limit;
             const endIndex = page * limit;
-            /* console.log('indice di inizio: ' + startIndex);
-            console.log('indice di fine: ' + endIndex); */
+            //console.log('indice di inizio: ' + startIndex);
+            //console.log('indice di fine: ' + endIndex); 
 
             // Recupera i prodotti dal database con paginazione
             const products = await Product.find().limit(limit).skip(startIndex);
             
             // Conta il numero totale di prodotti (per calcolare il numero di pagine totali)
             const totalProducts = await Product.countDocuments();
-            /* console.log('numero di prodotti: ' + totalProducts); */
+            // console.log('numero di prodotti: ' + totalProducts); 
 
             res.json({
                 totalProducts: totalProducts,
@@ -39,7 +71,7 @@ module.exports = {
         } catch (err) {
             res.status(500).json({ error: err.message });
           }
-    },
+    }, */ 
 
 
     getProductByprodName: (req, res) => {
