@@ -1,5 +1,6 @@
 import Product from './products.js'
 const prodListContainer = document.querySelector('#product-list-container')
+const prodNumber = document.querySelector('.prod-number')
 
  /*class Product {
     constructor(prodListContainer, product) {
@@ -180,16 +181,26 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             const data = await response.json();
+            const products = data.products || [];
+
             displayProducts(data.products);
             updatePaginationControls(data);
-            document.body.scrollTop = document.documentElement.scrollTop = 0;
+
+            // PER MOSTRARE NUMERO DI PRODOTTI, DICE IL NUMERO DI PRODOTTI DELLA PAGINA NON IL TOTALE
+            /* updateProductCount(products.length) */
+            if (page !== 1) {
+                document.body.scrollTop = document.documentElement.scrollTop = 420;
+            } else {
+                document.body.scrollTop = document.documentElement.scrollTop = 0;
+            }
+
+            
         } catch (error) {
             console.error('Error fetching products:', error);
         }
     };
 
     const displayProducts = (products) => {
-  
         productsContainer.innerHTML = '';
         products.forEach(product => {
             const productInstance = new Product(prodListContainer, product);
@@ -229,6 +240,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     };
+
+    // PER MOSTRARE NUMERO DI PRODOTTI, DICE IL NUMERO DI PRODOTTI DELLA PAGINA NON IL TOTALE
+    /* const updateProductCount = (count) => {
+        prodNumber.textContent = `${count} Prodotti in catalogo`
+    } */
 
     prevPageButton.addEventListener('click', () => {
         if (currentPage > 1) {

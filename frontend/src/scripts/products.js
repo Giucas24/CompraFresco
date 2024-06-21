@@ -206,9 +206,13 @@ export default class Product {
                 let nameNormal = product.nomeProdotto;
                 let nameUpperFirst = nameNormal[0].toUpperCase() + nameNormal.slice(1);
                 prodName.textContent = nameUpperFirst;
+
                 description.textContent = product.descrizione;
-                this.printRating(rating, this.product.valutazione);             
+
+                this.printRating(rating, this.product.valutazione);   
+
                 price.textContent = product.prezzo + ' €/kg';
+
                 quantity.textContent = 1;
                 let currQuantity = 1;
 
@@ -218,7 +222,10 @@ export default class Product {
                 sellerText.textContent = 'Venditore: ';
                 sellerName.textContent = product.nomeVenditore;
                 categoryText.textContent = 'Categoria: ';
-                categoryName.textContent = product.categoria;
+                
+                let categoryNameNormal = this.product.categoria;
+                let categoryUpperFirst = categoryNameNormal[0].toUpperCase() + categoryNameNormal.slice(1)
+                categoryName.textContent= categoryUpperFirst;
                 problemText.textContent = 'Segnala un problema per questo articolo'
 
                 // Aggiungi al carrello
