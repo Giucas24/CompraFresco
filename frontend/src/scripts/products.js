@@ -2,6 +2,8 @@ const mainContent = document.querySelector('#main-content');
 const prodListContainer = document.querySelector('#product-list-container');
 
 
+/* const prodNumber = document.querySelector('.prod-number'); */
+
 
 export default class Product {
     constructor(mainContent, product) {
@@ -321,6 +323,8 @@ export default class Product {
 
 
 
+
+
 fetch('./api/products/allEndPoint')
 .then(res => {
     if (res.ok) return res.json();
@@ -333,3 +337,6 @@ fetch('./api/products/allEndPoint')
     })
     
 })
+
+
+

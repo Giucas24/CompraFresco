@@ -3,6 +3,8 @@ const mongoose = require('mongoose')
 const cors = require('cors')
 const path = require('path')
 const router = require('./routes/api')
+const products = require('./models/products')
+
 
 
 
