@@ -2,7 +2,7 @@ const express = require('express')
 const productsController = require('../controllers/products')
 const path = require('path')
 const bodyParser = require("body-parser");
-const categoriaRouter = require('./categoria')
+/* const categoriaRouter = require('./categoria') */
 const Product = require('../models/products')
 
 
@@ -14,8 +14,8 @@ router.use(express.static(path.join(__dirname, '..', 'frontend', 'src')));
 
 router.use(bodyParser.json());
 
-router.use('/categoria', categoriaRouter)
-
+/* router.use('/categoria', categoriaRouter)
+ */
 
 
 
