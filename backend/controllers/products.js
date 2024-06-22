@@ -33,6 +33,7 @@ module.exports = {
 
             res.json({
                 products,
+                totalProducts,
                 currentPage: Number(page),
                 totalPages,
             });

@@ -182,6 +182,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const data = await response.json();
             const products = data.products || [];
+            prodNumber.textContent = data.totalProducts + ' Prodotti in catalogo'
+            
 
             displayProducts(data.products);
             updatePaginationControls(data);
