@@ -91,7 +91,7 @@ module.exports = {
             provenienza: req.body.provenienza,
             nomeVenditore: req.body.nomeVenditore,
             prezzo: req.body.prezzo,
-            imgSrc: '../public/img/' + req.body.nomeProdotto + '.png',
+            imgSrc: '../public/img/' + req.body.nomeProdotto.toLowerCase() + '.png',
             valutazione: '4',
             numeroRecensioni: '17'
         });
