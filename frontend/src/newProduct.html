@@ -8,15 +8,38 @@
     <link rel="stylesheet" href="./styles/newProduct.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/allproduct-footer.css">
 
 </head>
 <body>
     <header id="header">
         <div class="logo-container">
             <figure id="logo-figure">
-                <a href="index.html"><img src="../public/img/comprafresco-high-resolution-logo-white-transparent.png" id="logo-img"></a>
-                
+                <a href="index.html"><img src="./public/img/logo-index.png" id="logo-img"></a>
             </figure>
+        </div>
+
+        <div class="main-menu">
+            <nav id="nav-menu">
+                <ul id="info-menu">
+                    <li><a class="home-button" href="index.html">Home</a></li>
+                    <li>About</li>
+                    <li class="shop-button">
+                        <p>Shop</p>
+                        <div class="content">
+                            <a href="./allproducts.html">Prodotti</a>
+<!--                             <a href="">Product Details</a>
+ -->                            <a href="./newProduct.html">Aggiungi prodotto</a>
+                            <a href="">Carrello</a>
+                            <a href="">Checkout</a>
+                        </div>
+                    </li>
+                    <li>Pages</li>
+                    <li>Blog</li>
+                    <li>Contatti</li>
+                </ul>
+            </nav>
         </div>
 
         <div class="search-bar-container">
@@ -24,43 +47,151 @@
                 <input type="search" name="prodName" id="query" placeholder="Cerca i prodotti..." autocomplete="off" class="search-bar">
                 <button class="search-button"><i class="fa-solid fa-magnifying-glass" onclick=""></i></button>
             </form>
-            
         </div>
 
-        <div class="add-container">
-            <button class="add-product-button">Aggiungi prodotto</button>
+        <div class="right-header">
+            <ul id="right-icons">
+                <li><i class="fa-regular fa-heart"></i></li>
+                <li><i class="fa-solid fa-cart-shopping"></i></li>
+                <li><i class="fa-solid fa-bars"></i></li>
+            </ul>
         </div>
+
+      <!--  <div class="add-container">
+            <a href="./newProduct.html"><button class="add-product-button">Aggiungi prodotto</button></a>
+            
+        </div> -->
 
     </header>
 
-    <div class="main-content">
+     <main>
+        <div class="top-img-container-aggiungi-prodotto">
+            <div class="top-img-text">
+                <div class="top-img-text-upper">
+                    <p>Aggiungi prodotto</p>
+                </div>
+
+                <div class="top-img-text-lower">
+                    <ul>
+                        <li><a class="home-allprods-button" href="index.html">Home</a></li>
+                        <li><span class="dot">&#8231;</span></li>
+                        <li>Aggiungi prodotto</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+<!--
+        <div class="body-container">
+            <form id="post-product" action=""></form>
+            <div class="add-prod-container">
+                
+                    <div class="add-img">
+                        <input type="file" id="imgSrc" accept="image/*">
+                    </div>
+
+                    <div class="add-data">
+                        <label for="nomeProdotto">Nome prodotto</label><br>
+                        <input type="text" id="nomeProdotto" name="nomeProdotto" autocomplete="off"><br>
+
+                        <label for="descrizione">Descrizione</label><br>
+                        <textarea name="descrizione" id="descrizione" rows="15" cols="15" autocomplete="off" required></textarea>
+
+                        <label for="provenienza">Provenienza</label><br>
+                        <input type="text" id="provenienza" name="provenienza" autocomplete="off"><br>
+
+                        <label for="metodoColtivazione">Metodo di coltivazione</label><br>
+                        <input type="text" id="metodoColtivazione" name="metodoColtivazione" autocomplete="off"><br>
+
+                        <label for="certificazioni">Certificazioni</label><br>
+                        <select name="certificazioni" id="certificazioni">
+                            <option value="certificazione-bio">Certificazione Bio</option>
+                            <option value="certificazione-global-gap">Certificazione Global GAP</option>
+                        </select>
+
+
+                        <label for="provenienza">Provenienza</label><br>
+                        <input type="text" id="provenienza" name="provenienza" autocomplete="off"><br>
+                    </div>
+                
+                
+            </div>
+        </form>
+        </div>
+
+        
+
+
+
+    </main> -->
+     <div class="main-content">
         <div class="data-container">
-            <form id="product-post" action="">
+            <form id="product-post" action="/newProduct" method="post" enctype="multipart/form-data">
                 <div class="upload-img-container">
                     <input type="file" id="imgSrc" accept="image/*" hidden>
                     <div class="img-area" data-img="">
                         <i class="bx bxs-cloud-upload icon"></i>
-                        <h3>Upload Image</h3>
-                        <p>Image size must be less than <span>2MB</span></p>
+                        <h3>Inserisci immagine</h3>
                     </div>
-                    <button type="button" class="select-image">Select Image</button>
+                    <p>IMPORTANTE:</p>
+                    <p>La dimensione dell'immagine deve essere inferiore a 2MB.</p>
+                    <p>Per una corretta visualizzazione, l'immagine deve avere lo stesso nome del prodotto.</p>
+                    <p>Sono ammesse solo immagini in formato PNG. Altri formati non saranno visualizzati.</p>
+                    <button type="button" class="select-image">Seleziona immagine</button>
+                    
                 </div>
 
 
                 <div class="data-input">
-                
-                    <label for="prodName">Nome prodotto</label><br>
-                    <input type="text" id="prodName" name="prodName" autocomplete="off" required><br>
+                    <div class="nome-prodotto-box">
+                        <label for="nomeProdotto">Nome prodotto</label><br>
+                        <input type="text" id="nomeProdotto" name="nomeProdotto" autocomplete="off" value="Pesca" required> <br>
+                    </div>
+        
+                    <div class="categoria-prezzo-box">
+                        <div class="categoria-box">
+                            <label for="categoria">Categoria</label>
+                            <select name="categoria" id="categoria">
+                                <option value="frutta">Frutta</option>
+                                <option value="verdura">Verdura</option>
+                                <option value="ortaggio">Ortaggio</option>
+                                <option value="tubero">Tubero</option>
+                            </select>
+                        </div>
+
+                        <div class="prezzo-box">
+                            <label for="prezzo">Prezzo /kg</label>
+                            <input type="number" id="prezzo" name="prezzo" autocomplete="off" value="2" required>
+                        </div>
+                    </div>
+
+                    <div class="descrizione-box">
+                        <label for="descrizione">Descrizione</label><br>
+                        <textarea name="descrizione" id="descrizione" rows="8" cols="34" autocomplete="off"  required>Assapora la dolcezza delle nostre pesche fresche, raccolte a mano e selezionate con cura. Con la loro buccia vellutata di colore giallo-arancio e la polpa succosa, sono il frutto estivo per eccellenza.</textarea>
+                    </div>
+
+                    <div class="provenienza-box">
+                        <label for="provenienza">Provenienza</label>
+                        <input type="text" id="provenienza" name="provenienza" autocomplete="off" value="Italia, Emilia-Romagna" required>
+                    </div>
+
+                    <div class="venditore-box">
+                        <label for="nomeVenditore">Venditore</label>
+                        <input type="text" id="nomeVenditore" name="nomeVenditore" autocomplete="off" value="Sapori della Terra" required>
+                    </div>
+                    
+
+                    <!-- <label for="categoria">Categoria</label><br>
+                    <input type="text" id="categoria" name="categoria" autocomplete="off" value="frutta" required><br> -->
     
-                    <label for="description">Descrizione</label><br>
-                    <textarea name="description" id="description" rows="15" cols="100" autocomplete="off" required></textarea><br>
+                    
     
-                    <label for="rating">Valutazione</label><br>
-                    <input type="number" id="rating" name="rating" autocomplete="off" max="5" required><br>
+                    
+
+                    
                     
                 
-                    <label for="price">Prezzo</label><br>
-                    <input type="number" id="price" name="price" autocomplete="off" required><br>
+                    
     
                     <button type="submit" class="send-data-button">
                         Invia
@@ -72,9 +203,79 @@
 
         
     </div>
+
+    <footer>
+        <div class="footer-container">
+
+            <div class="first-box">
+                <div class="footer-logo">
+                    <img class="footer-logo-img" src="./public/img/comprafresco-high-resolution-logo-transparent.png" alt="">
+                </div>
+
+                <div class="footer-description">
+                    <p>Frutta e verdura fresca: consegniamo ogni giorno prodotti freschi e di qualità dalla fattoria alla tua tavola.</p>
+                </div>
+
+                <div class="footer-social">
+                    <a class="facebook" href=""><i class="fa-brands fa-facebook-f"></i></a>
+                    <a class="twitter" href=""><i class="fa-brands fa-x-twitter"></i></a>
+                    <a class="linkedin" href=""><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a class="instagram" href=""><i class="fa-brands fa-instagram"></i></a>
+                    
+                </div>
+            </div>
+
+            <div class="second-box">
+                <h3 class="box-title">Services</h3>
+                <ul class="footer-list">
+                    <li>Log In</li>
+                    <li>Wishlist</li>
+                    <li>Return policy</li>
+                    <li>Testimonial</li>
+                    <li>Shopping FAQs</li>
+                    <li>Privacy Policy</li>
+                </ul>
+            </div>
+
+            <div class="third-box">
+                <h3 class="box-title">Company</h3>
+                <ul class="footer-list">
+                    <li>Home</li>
+                    <li>About us</li>
+                    <li>How its work</li>
+                    <li>Pages</li>
+                    <li>Blog</li>
+                    <li>Contact us</li>
+                </ul>
+            </div>
+
+            
+            <div class="fourth-box">
+                <h3 class="box-title">Contact</h3>
+                <div>
+                    <h2 class="address">Via Edoardo Orabona. Bari, Italia, 70126</h2>
+                    <div class="location-icon-container-1">
+                        <div class="location-icon"><i class="fa-solid fa-location-dot" style="color: #ffffff;"></i></div>
+                        
+                        <p>Via E. Orabona 4, Bari</p>
+                    </div>
+
+                    <div class="location-icon-container-2">
+                        <div class="location-icon"><i class="fa-solid fa-phone" style="color: #ffffff;"></i></div>
+                        <div>
+                            <p>+39 080 596 2111</p>
+                            <p class="orario">Lun - Ven: 09:00  - 17:00</p>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+            </div>            
+
+        </div>
+    </footer>
     
     <script src="./scripts/newProduct.js" type="module" defer></script>
-    <script src="./scripts/products.js" type="module" defer></script>
    <!-- <script>window.aichatbotApiKey="c3fc8b3f-7e2a-4a8e-acd5-9a688227a8e4"; window.aichatbotProviderId="f9e9c5e4-6d1a-4b8c-8d3f-3f9e9c5e46d1";</script><script src="https://script.chatlab.com/aichatbot.js" id="c3fc8b3f-7e2a-4a8e-acd5-9a688227a8e4" defer></script> -->
 
 </body>

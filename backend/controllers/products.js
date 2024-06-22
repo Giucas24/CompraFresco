@@ -84,11 +84,15 @@ module.exports = {
     postNewProduct: async (req, res) => {
         console.log(req.body);
         const data = new Product({
-            prodName: req.body.prodName,
-            description: req.body.description,
-            rating: req.body.rating,
-            price: req.body.price,
-            imgSrc: req.body.imgSrc
+            nomeProdotto: req.body.nomeProdotto,
+            categoria: req.body.categoria,
+            descrizione: req.body.descrizione,
+            provenienza: req.body.provenienza,
+            nomeVenditore: req.body.nomeVenditore,
+            prezzo: req.body.prezzo,
+            imgSrc: '../public/img/' + req.body.nomeProdotto + '.png',
+            valutazione: '4',
+            numeroRecensioni: '17'
         });
 
         const val = await data.save();

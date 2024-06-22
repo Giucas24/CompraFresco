@@ -22,12 +22,12 @@ inputFile.addEventListener('change', function () {
 			img.src = imgUrl;
 			imgArea.innerHTML = '';
 			imgArea.appendChild(img);
-			uploadImgContainer.style.width= '282.79px';
+			/* uploadImgContainer.style.width= '282.79px';
 			uploadImgContainer.style.height= '325px';
 			dataInput.style.width= '359px';
 			//dataInput.style.height= '';
-			imgArea.style.width = '282.79px'; // Imposta la larghezza desiderata
-			imgArea.style.height = '240px'; // Imposta l'altezza desiderata
+			imgArea.style.width = '282.79px';
+			imgArea.style.height = '240px'; */
 			imgArea.classList.add('active');
 			imgArea.dataset.img = image.name;
 			
