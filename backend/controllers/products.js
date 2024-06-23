@@ -87,10 +87,13 @@ module.exports = {
         const data = new Product({
             nomeProdotto: req.body.nomeProdotto,
             categoria: req.body.categoria,
+            prezzo: req.body.prezzo,
+            metodoColtivazione: req.body.metodoColtivazione,
             descrizione: req.body.descrizione,
             provenienza: req.body.provenienza,
+            indirizzoTerreno: req.body.indirizzoTerreno,
+            stagionalita: req.body.stagionalita,
             nomeVenditore: req.body.nomeVenditore,
-            prezzo: req.body.prezzo,
             imgSrc: '../public/img/' + req.body.nomeProdotto.toLowerCase() + '.png',
             valutazione: '4',
             numeroRecensioni: '17'

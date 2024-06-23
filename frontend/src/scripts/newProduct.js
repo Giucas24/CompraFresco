@@ -54,12 +54,17 @@ prodForm.addEventListener('submit', (e) => {
 		body: JSON.stringify(data)
 	})
 	.then(response => {
-		if (response.status === 200) { window.location.href = "./index.html" }
+		if (response.status === 200) {
+			alert('Prodotto inserito con successo')
+			window.location.href = "./index.html" 
+			}
 		else console.log('errore');
 	})
 
 	if (response.ok) {
+		
 		window.location.href = "./index.html";
+		
 	}
 })
 
