@@ -4,9 +4,13 @@ const path = require('path')
 
 
 module.exports = {
-    getAllEndPoint: (req, res) => {
-        Product.find({})
-            .then(r => res.json(r))
+    getAllEndPoint: async (req, res) => {
+        const prodotti = await Product.find({});
+        const numeroProdotti = await Product.countDocuments();
+        res.json({
+            prodotti,
+            numeroProdotti
+        })
     },
 
     getAllProducts: async (req, res) => {
