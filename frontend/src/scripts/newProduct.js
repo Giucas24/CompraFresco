@@ -53,9 +53,4 @@ prodForm.addEventListener('submit', (e) => {
 			else console.log('errore');
 		})
 
-	if (response.ok) {
-
-		window.location.href = "./index.html";
-
-	}
 })
